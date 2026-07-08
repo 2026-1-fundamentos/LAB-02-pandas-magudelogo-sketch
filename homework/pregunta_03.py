@@ -1,3 +1,5 @@
+import pandas as pd
+
 """
 Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
 datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y 
@@ -21,3 +23,8 @@ def pregunta_03():
     Name: count, dtype: int64
 
     """
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
+    registros = df.groupby("c1").size()
+    registros.name = "count"
+
+    return registros

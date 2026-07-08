@@ -1,3 +1,5 @@
+import pandas as pd
+
 """
 Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
 datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y 
@@ -14,3 +16,5 @@ def pregunta_01():
     40
 
     """
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
+    return df.shape[0]
